@@ -13,7 +13,9 @@ npm install vue-sina-emotion
 ```
 # js
 import Vue from 'vue';
-import VueSinaEmotion from '../src/vue-sina-emotion.vue';
+import VueSinaEmotion from 'vue-sina-emotion';
+// or import no babel code
+// import VueSinaEmotion from 'vue-sina-emotion/src/';
 Vue.component('vue-sina-emotion', VueSinaEmotion);
 
 var vm = new Vue({
