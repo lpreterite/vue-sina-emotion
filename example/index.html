@@ -7,8 +7,8 @@
   <body>
     <div id="app">
       <h1>{{ title }}</h1>
-      <vue-sina-emotion :source="emotions" :page-rows="23"></vue-sina-emotion>
-      <button @click="testA">BBB</button>
+      <p>{{ emotion }}</p>
+      <vue-sina-emotion :source="emotions" @click="emotion=arguments[0].phrase"></vue-sina-emotion>
     </div>
     <script src="/vendor/build.js"></script>
   </body>

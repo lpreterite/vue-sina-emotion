@@ -23,12 +23,8 @@ var vm = new Vue({
         return {
             test: 0,
             title: 'VueSinaEmotion',
-            emotions: ''
-        }
-    },
-    methods: {
-        testA: function(){
-            this.emotions = '222'
+            emotions: [],
+            emotion: '[表情]'
         }
     }
 })

@@ -26,13 +26,13 @@ export function hashEmotions(emotions){
     return { groups, categories, map }
 }
 
-export function fetchEmotions(pageIndex, emotions, opts){
+export function paginator(pageIndex, data, opts){
     opts = Object.assign({ pageRow: 80 }, opts);
 
-    var length = emotions.length,
+    var length = data.length,
         maxPage = Math.ceil( length / opts.pageRow ),
         nextPage = pageIndex + 1 > maxPage ? maxPage : pageIndex + 1,
-        data = emotions.splice((pageIndex - 1) * opts.pageRow, Math.min((nextPage - 1) * opts.pageRow, length));
+        data = [].concat(data).splice((pageIndex - 1) * opts.pageRow, nextPage === 1 ? length : Math.min((nextPage - 1) * opts.pageRow, length));
 
     return {
         currentPage: pageIndex,
