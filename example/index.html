@@ -5,9 +5,11 @@
     <title>vue-sina-emotion</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script src="/vue/dist/vue.js"></script>
-    <script src="/dist/vue-sina-emotion.js"></script>
-    <script src="main.js"></script>
+    <div id="app">
+      <h1>{{ title }}</h1>
+      <vue-sina-emotion :source="emotions" :page-rows="23"></vue-sina-emotion>
+      <button @click="testA">BBB</button>
+    </div>
+    <script src="/vendor/build.js"></script>
   </body>
 </html>

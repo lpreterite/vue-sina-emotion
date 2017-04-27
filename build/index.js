@@ -9,6 +9,7 @@ options.module.rules.unshift([{
     loader: 'vue-loader',
     options: {
         loaders: {
+            'js': 'babel-loader',
             'css': ExtractTextPlugin.extract({
                 use: 'css-loader',
                 fallback: 'vue-style-loader'

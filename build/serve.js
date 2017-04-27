@@ -2,17 +2,16 @@ const path = require('path');
 const webpack = require('webpack');
 var options = require('./base.js');
 
+options.entry = './example/main.js';
 options.devtool = '#source-map';
 options.output = {
-    library: 'VueSinaEmotion',
-    libraryTarget: "umd",
     path: path.resolve(__dirname, '../dist'),
-    publicPath: '/dist/',
-    filename: 'vue-sina-emotion.js'
+    publicPath: '/vendor/',
+    filename: 'build.js'
 };
 options.devServer = {
     historyApiFallback: true,
     noInfo: true,
-    contentBase: [path.join(__dirname, '../example'), path.join(__dirname, "../node_modules")]
+    contentBase: [path.join(__dirname, '../example')]
 };
 module.exports = options;
