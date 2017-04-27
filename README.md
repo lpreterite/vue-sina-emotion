@@ -6,7 +6,7 @@
 
 ### setup
 ```
-npm install vue-sina-emotion
+npm install lpreterite/vue-sina-emotion
 ```
 
 ### use
