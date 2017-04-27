@@ -17,10 +17,10 @@
     "mock": "node mock/"
   },
   "dependencies": {
-    "axios": "^0.16.1",
     "vue": "^2.2.1"
   },
   "devDependencies": {
+    "axios": "^0.16.1",
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",
     "babel-preset-latest": "^6.0.0",
