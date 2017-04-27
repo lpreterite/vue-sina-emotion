@@ -32,7 +32,10 @@ export function paginator(pageIndex, data, opts){
     var length = data.length,
         maxPage = Math.ceil( length / opts.pageRow ),
         nextPage = pageIndex + 1 > maxPage ? maxPage : pageIndex + 1,
-        data = [].concat(data).splice((pageIndex - 1) * opts.pageRow, nextPage === 1 ? length : Math.min((nextPage - 1) * opts.pageRow, length));
+        offset = (pageIndex - 1) * opts.pageRow,
+        result = [].concat(data).splice(offset, Math.min(opts.pageRow, length - offset));
+
+        //nextPage === 1 ? length : Math.min((nextPage - 1) * opts.pageRow, length)
 
     return {
         currentPage: pageIndex,
@@ -40,6 +43,6 @@ export function paginator(pageIndex, data, opts){
         maxPage: maxPage,
         nextPage: nextPage,
         prevPage: pageIndex - 1 < 0 ? 0 : pageIndex, 
-        data: data
+        data: result
     }
 }

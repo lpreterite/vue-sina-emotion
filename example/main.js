@@ -21,10 +21,15 @@ var vm = new Vue({
     el: '#app',
     data: function(){
         return {
-            test: 0,
             title: 'VueSinaEmotion',
             emotions: [],
-            emotion: '[表情]'
+            emotion: '[表情]',
+            emotionsMap: {}
+        }
+    },
+    methods: {
+        map: function(data){
+            this.emotionsMap = data;
         }
     }
 })

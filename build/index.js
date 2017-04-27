@@ -3,8 +3,8 @@ const webpack = require('webpack');
 var options = require('./base.js');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-options.module.rules.pop();
-options.module.rules.unshift([{
+options.module.rules.shift();
+options.module.rules.unshift({
     test: /\.vue$/,
     loader: 'vue-loader',
     options: {
@@ -20,8 +20,7 @@ options.module.rules.unshift([{
             })
         }
     }
-}])
-options.devtool = '#source-map';
+})
 options.plugins = [
     new ExtractTextPlugin('vue-sina-emotion.css'),
     new webpack.DefinePlugin({
