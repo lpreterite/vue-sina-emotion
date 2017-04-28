@@ -2,7 +2,10 @@
   "name": "vue-sina-emotion",
   "description": "新浪表情面板的vue组件",
   "version": "0.1.0",
-  "main": "dist/vue-sina-emotion.js",
+  "main": [
+    "dist/vue-sina-emotion.js",
+    "dist/vue-sina-emotion.css"
+  ],
   "author": "packy <lpreterite@126.com>",
   "keywords": [
     "vfis",

@@ -7,8 +7,8 @@
                 </template>
             </div>
             <div class="tabsTools">
-                <a href="#" class="btn tabsToolsButton" @click="prevCate" :disabled="categories.prevPage <= 1">&lt</a>
-                <a href="#" class="btn tabsToolsButton" @click="nextCate" :disabled="categories.prevPage >= categories.maxPage">&gt</a>
+                <a href="#" class="btn tabsToolsButton" @click.prevent.stop="prevCate" :disabled="categories.prevPage <= 1">&lt</a>
+                <a href="#" class="btn tabsToolsButton" @click.prevent.stop="nextCate" :disabled="categories.prevPage >= categories.maxPage">&gt</a>
             </div>
         </header>
         <div class="sina-emotion-panel__content">
@@ -19,8 +19,8 @@
             </template>
         </div>
         <footer class="sina-emotion-panel__footer">
-            <a href="#" class="btn" @click="prev" :disabled="emotions.prevPage <= 1">上一页</a>
-            <a href="#" class="btn" @click="next" :disabled="emotions.prevPage >= emotions.maxPage">下一页</a>
+            <a href="#" class="btn" @click.prevent.stop="prev" :disabled="emotions.prevPage <= 1">上一页</a>
+            <a href="#" class="btn" @click.prevent.stop="next" :disabled="emotions.prevPage >= emotions.maxPage">下一页</a>
         </footer>
     </div>
 </template>
