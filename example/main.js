@@ -27,9 +27,11 @@ var vm = new Vue({
             emotionsMap: {}
         }
     },
-    methods: {
-        map: function(data){
-            this.emotionsMap = data;
+    watch: {
+        emotions(val){
+            var map = {};
+            val.forEach(emotion=>map[emotion.value]=emotion.url);
+            this.emotionsMap = map;
         }
     }
 })

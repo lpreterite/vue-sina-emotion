@@ -13,7 +13,7 @@
         </header>
         <div class="sina-emotion-panel__content">
             <template v-for="emotion in emotions.data">
-                <a href="#" @click.prevent.stop="$emit('click', emotion)">
+                <a href="#" @click.prevent.stop="$emit('change', emotion)">
                     <img :src="emotion.icon" :alt="emotion.phrase">
                 </a>
             </template>
@@ -82,7 +82,7 @@
     }
 </style>
 <script>
-import { hashEmotions, getEmotions, paginator } from './handle';
+import { hashEmotions, paginator } from './handle';
 export default {
     name: 'vue-sina-emotion',
     props: {
@@ -90,10 +90,6 @@ export default {
         pageRows: {
             type: Number,
             default: 0
-        },
-        map: {
-            type: Function,
-            default: function(){}
         }
     },
     watch: {
@@ -101,7 +97,6 @@ export default {
             this.storage = hashEmotions(val);
             this.categories = paginator(this.categories.currentPage, this.storage.categories, {pageRow: 5});
             this.emotions = paginator(this.emotions.currentPage, this.storage.groups[this.currentCate] || []);
-            this.map(this.storage.map);
         },
         currentCate(val){
             this.emotions = paginator(this.emotions.currentPage, this.storage.groups[val] || []);
@@ -114,7 +109,7 @@ export default {
         }
     },
     data(){
-        return {
+        const data = {
             storage: {},
             emotions: {
                 pageRow: 0,
@@ -133,7 +128,12 @@ export default {
                 data: []
             },
             currentCate: '默认'
-        }
+        };
+
+        data.storage = hashEmotions(this.source);
+        data.categories = paginator(data.categories.currentPage, data.storage.categories, {pageRow: 5});
+        data.emotions = paginator(data.emotions.currentPage, data.storage.groups[data.currentCate] || []);
+        return data;
     },
     methods:{
         next(){
