@@ -1,12 +1,3 @@
-import axios from 'axios';
-
-export function getEmotions(source, language){
-    return axios.get('https://api.weibo.com/2/emotions.json?callback=?', {params:{
-        source,
-        language
-    }});
-};
-
 export function hashEmotions(emotions){
     var groups = {},
         categories = [],

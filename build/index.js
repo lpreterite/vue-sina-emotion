@@ -12,11 +12,20 @@ options.module.rules.unshift({
             'js': 'babel-loader',
             'css': ExtractTextPlugin.extract({
                 use: 'css-loader',
-                fallback: 'vue-style-loader'
+                fallback: {
+                    loader: 'vue-style-loader',
+                    options: {sourceMap: false}
+                }
             }),
             'scss': ExtractTextPlugin.extract({
-                use: 'css-loader!sass-loader',
-                fallback: 'vue-style-loader'
+                use: [
+                    { loader: 'css-loader', options: {sourceMap: false} },
+                    { loader: 'sass-loader', options: {sourceMap: false} }
+                ],
+                fallback: {
+                    loader: 'vue-style-loader',
+                    options: {sourceMap: false}
+                }
             })
         }
     }
@@ -29,7 +38,7 @@ options.plugins = [
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
+      sourceMap: false,
       compress: {
         warnings: false
       }

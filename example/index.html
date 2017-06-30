@@ -8,7 +8,7 @@
     <div id="app">
       <h1>{{ title }}</h1>
       <p>{{ emotion }} <img :src="emotionsMap[emotion]" alt=""></p>
-      <vue-sina-emotion :source="emotions" @click="emotion=arguments[0].phrase" :map="map"></vue-sina-emotion>
+      <vue-sina-emotion :source="emotions" @change="emotion=arguments[0].phrase"></vue-sina-emotion>
     </div>
     <script src="/vendor/build.js"></script>
   </body>

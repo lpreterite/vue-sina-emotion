@@ -1,7 +1,7 @@
 {
   "name": "vue-sina-emotion",
   "description": "新浪表情面板的vue组件",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/vue-sina-emotion.js",
   "author": "packy <lpreterite@126.com>",
   "keywords": [

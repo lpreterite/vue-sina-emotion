@@ -40,7 +40,7 @@ var vm = new Vue({
     <vue-sina-emotion 
         :source="emotions"
         :map="map"
-        @click="emotion=arguments[0].phrase">    
+        @change="emotion=arguments[0].phrase">    
     </vue-sina-emotion>
 </div>
 
@@ -78,7 +78,7 @@ more see **example**
 
 ## Dev
 
-``` bash
+```
 # install dependencies
 npm install
 
@@ -91,3 +91,8 @@ npm run build
 # run mock serve
 npm run mock
 ```
+
+## Change Log
+
+### 0.1.1
+remove props map function, fix format source to data in init
